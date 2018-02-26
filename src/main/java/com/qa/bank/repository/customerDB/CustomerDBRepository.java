@@ -1,4 +1,4 @@
-package com.qa.bank.integration.customerDB;
+package com.qa.bank.repository.customerDB;
 
 public class CustomerDBRepository implements CustomerDBInterface{
 

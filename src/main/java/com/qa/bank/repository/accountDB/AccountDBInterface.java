@@ -1,4 +1,4 @@
-package com.qa.bank.integration.accountDB;
+package com.qa.bank.repository.accountDB;
 
 public interface AccountDBInterface {
 	public String getCustomerID(String ID);

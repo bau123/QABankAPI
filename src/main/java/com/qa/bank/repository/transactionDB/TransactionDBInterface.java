@@ -1,4 +1,4 @@
-package com.qa.bank.integration.transactionDB;
+package com.qa.bank.repository.transactionDB;
 
 public interface TransactionDBInterface {
 		
