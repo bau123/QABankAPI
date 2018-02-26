@@ -12,7 +12,7 @@ public class TransactionDBRepository implements TransactionDBInterface{
 		return null;
 	}
 
-	public String getNewBalance() {
+	public Float getNewBalance() {
 		// TODO Auto-generated method stub
 		return null;
 	}

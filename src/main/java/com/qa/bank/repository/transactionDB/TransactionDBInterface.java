@@ -6,7 +6,7 @@ public interface TransactionDBInterface {
 	
 	public String getAmount();
 	
-	public String getNewBalance();
+	public Float getNewBalance();
 	
 	public String getTransactionType();
 }
