@@ -8,32 +8,42 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import com.qa.bank.repository.accountDB.AccountDBInterface;
+
 @Path("/account")
 public class AccountEndpoint {
 	
-	@Path("/json")
+	@Inject
+	private AccountDBInterface accountInterface;
+	
+	@Path("/ID")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllAccounts() {
-		return service.getAllAccounts();
+	public String getAccountID() {
+		return accountInterface.getAccountID();
 	}
-
-	@Path("/json")
-	@POST
+	
+	@Path("/AccountNo")
+	@GET
 	@Produces({ "application/json" })
-	public String addAccount(String account) {
-		return service.addAccount(account);
+	public String getAccountNo(String accountNo) {
+		return accountInterface.getAccountNo(accountNo);
 	}
 
-	@Path("/json/{id}")
-	@DELETE
+	@Path("/Balance")
+	@GET
 	@Produces({ "application/json" })
-	public String deleteAccount(@PathParam("id") Long id) {
-		return service.deleteAccount(id);
+	public String getBalance() {
+		return accountInterface.getBalance();
 
 	}
+	@Path("/CustomerID")
+	@GET
+	@Produces({ "application/json" })
+	public String getCustomerID(String customerID) {
+		return accountInterface.getCustomerID(customerID);
 
-	public void setService(AccountService service) {
-		this.service = service;
+	public void setRepository(AccountDBInterface accountInterface) {
+		this.accountInterface = accountInterface;
 	}
 }
