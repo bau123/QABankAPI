@@ -3,11 +3,10 @@ package com.qa.bank.repository.customerDB;
 public class CustomerDBRepository implements CustomerDBInterface{
 
 	public String getAccountID() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getAccountNo() {
+	public String getAccountNo(String accountNo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -17,7 +16,7 @@ public class CustomerDBRepository implements CustomerDBInterface{
 		return 0;
 	}
 
-	public String getCustomerID() {
+	public String getCustomerID(String customerID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

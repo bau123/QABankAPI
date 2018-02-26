@@ -2,7 +2,7 @@ package com.qa.bank.repository.transactionDB;
 
 public class TransactionDBRepository implements TransactionDBInterface{
 
-	public String getTransactionID() {
+	public String getTransactionID(String ID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -21,5 +21,6 @@ public class TransactionDBRepository implements TransactionDBInterface{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
