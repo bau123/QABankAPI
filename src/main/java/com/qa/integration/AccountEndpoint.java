@@ -33,7 +33,7 @@ public class AccountEndpoint {
 	@Path("/Balance")
 	@GET
 	@Produces({ "application/json" })
-	public String getBalance() {
+	public float getBalance() {
 		return accountInterface.getBalance();
 
 	}
@@ -42,7 +42,7 @@ public class AccountEndpoint {
 	@Produces({ "application/json" })
 	public String getCustomerID(String customerID) {
 		return accountInterface.getCustomerID(customerID);
-
+	}
 	public void setRepository(AccountDBInterface accountInterface) {
 		this.accountInterface = accountInterface;
 	}
