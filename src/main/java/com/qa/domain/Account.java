@@ -11,35 +11,19 @@ public class Account {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
-	private String firstName;
-	private String lastName;
+	private Long customerID;
 	private String accountNumber;
+	private Float balance;
+	private String accountID;
 
 	public Account() {
 
 	}
 
-	public Account(String firstName, String secondName, String accountNumber) {
-		this.firstName = firstName;
-		this.lastName = secondName;
-		this.accountNumber = accountNumber;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public Account(String accountNumber, Float balance, String accountID) {
+		this.accountNumber = accountID;
+		this.balance = balance;
+		this.accountID = accountID;
 	}
 
 	public String getAccountNumber() {
@@ -50,12 +34,28 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
-	public Long getId() {
-		return id;
+	public float getBalance() {
+		return balance;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setBalance(Float balance) {
+		this.balance = balance;
+	}
+
+	public String getAccountID() {
+		return accountID;
+	}
+
+	public void setAccountID(String accountID) {
+		this.accountID = accountID;
+	}
+
+	public Long getCustomerID() {
+		return customerID;
+	}
+
+	public void setCustomerID(Long customerID) {
+		this.customerID = customerID;
 	}
 }
 
