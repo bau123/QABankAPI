@@ -1,23 +1,27 @@
 package com.qa.bank.repository.accountDB;
 
 public class AccountDBRepository implements AccountDBInterface{
-	
-	public String getCustomerID(String ID) {
+
+	@Override
+	public String getAccountID() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getFirstName() {
+	@Override
+	public String getAccountNo(String accountNo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getLastName() {
+	@Override
+	public float getBalance() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
-	public String getAddress() {
+	@Override
+	public String getCustomerID(String customerID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

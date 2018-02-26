@@ -1,11 +1,11 @@
 package com.qa.bank.repository.accountDB;
 
 public interface AccountDBInterface {
-	public String getCustomerID(String ID);
+	public String getAccountID();
 	
-	public String getFirstName();
+	public String getAccountNo(String accountNo);
 	
-	public String getLastName();
+	public float getBalance();
 	
-	public String getAddress();
+	public String getCustomerID(String customerID);
 }

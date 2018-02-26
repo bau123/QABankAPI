@@ -1,22 +1,23 @@
 package com.qa.bank.repository.customerDB;
 
 public class CustomerDBRepository implements CustomerDBInterface{
-
-	public String getAccountID() {
-		return null;
-	}
-
-	public String getAccountNo(String accountNo) {
+	
+	public String getCustomerID(String ID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public float getBalance() {
+	public String getFirstName() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
-	public String getCustomerID(String customerID) {
+	public String getLastName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
