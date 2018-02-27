@@ -28,50 +28,50 @@ public class TransactionDBRepository implements TransactionDBInterface{
 	private static final String TRANSACTION_ALL_COLUMNS = "SELECT * FROM TRANSACTIONS WHERE ACCOUNTID = ";
 	private Query query;
 	
-	
+	@Override
 	public String getAmount(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_AMOUNT_COLUMN + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-
+	@Override
 	public String getUpdatedBalance(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_NEWBALANCE_COLUMN + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-
+	@Override
 	public String getTransactionType(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_TYPE_COLUMN + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-
+	@Override
 	public String getAccountID(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_ACCOUNT_ID_COLUMNS + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-
+	@Override
 	public String getDateOfTransactions(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_DATEOFTRANSACTION_COLUMNS + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-
+	@Override
 	public String getDepositWithdrawal(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_DEPOSIT_WITHDRAWAL_COLUMNS + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-
+	@Override
 	public String getDescription(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_DESCRIPTION_COLUMNS + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
-	
+	@Override
 	public String getTransactionsAll(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_ALL_COLUMNS + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
