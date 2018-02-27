@@ -18,4 +18,8 @@ public interface TransactionDBInterface {
 	
 	public String getDescription(String accountID);
 	
+	public String getAverageOfSpending(String accountID);
+	
+	public String getAverageOfEarning(String accountID);
+	
 }
