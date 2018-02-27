@@ -1,12 +1,21 @@
 package com.qa.bank.repository.transactionDB;
 
 public interface TransactionDBInterface {
-		
-	public String getTransactionID(String ID);
 	
-	public String getAmount();
+	public String getAmount(String accountID);
 	
-	public Float getNewBalance();
+	public String getUpdatedBalance(String accountID);
 	
-	public String getTransactionType();
+	public String getTransactionType(String accountID);
+	
+	public String getAccountID(String accountID);
+	
+	public String getDateOfTransactions(String accountID);
+	
+	public String getDepositWithdrawal(String accountID);
+	
+	public String getTransactionsAll(String accountID);
+	
+	public String getDescription(String accountID);
+	
 }
