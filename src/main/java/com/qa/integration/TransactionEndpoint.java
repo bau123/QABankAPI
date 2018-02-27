@@ -8,6 +8,7 @@ import javax.ws.rs.Produces;
 
 import com.qa.bank.repository.transactionDB.TransactionDBInterface;
 
+@Path("/transaction")
 public class TransactionEndpoint {
 	
 	@Inject

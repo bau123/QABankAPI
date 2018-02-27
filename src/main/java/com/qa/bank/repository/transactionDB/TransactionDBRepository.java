@@ -72,7 +72,7 @@ public class TransactionDBRepository implements TransactionDBInterface{
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
 	
-	public String getTransactionsAll(String accountID) {
+	public String getTransactionsAll() {
 		query = entityManager.createQuery(TRANSACTION_ALL_COLUMNS);
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
