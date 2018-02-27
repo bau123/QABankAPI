@@ -14,7 +14,7 @@ public interface TransactionDBInterface {
 	
 	public String getDepositWithdrawal(String accountID);
 	
-	public String getTransactionsAll();
+	public String getTransactionsAll(String accountID);
 	
 	public String getDescription(String accountID);
 	
