@@ -15,35 +15,57 @@ public class TransactionEndpoint {
 	private TransactionDBInterface transactionInterface;
 
 
-	@Path("/ID")
+	@Path("/All")
 	@GET
 	@Produces({ "application/json" })
-	public String getTransactionID(String ID) {
-		return transactionInterface.getTransactionID(ID);
+	public String getTransactionAll(String transactionID) {
+		return transactionInterface.getTransactionsAll(transactionID);
 	}
 
 	@Path("/amount")
 	@GET
 	@Produces({ "application/json" })
-	public String getAmount() {
-		return transactionInterface.getAmount();
+	public String getAmount(String transactionID) {
+		return transactionInterface.getAmount(transactionID);
 	}
 
 	@Path("/newBalance")
 	@GET
 	@Produces({ "application/json" })
-	public Float getNewBalance() {
-		return transactionInterface.getNewBalance();
+	public String getUpdatedBalance(String transactionID) {
+		return transactionInterface.getUpdatedBalance(transactionID);
 
 	}
+	
+	@Path("/Dates")
+	@GET
+	@Produces({ "application/json" })
+	public String getDateOfTransactions(String transactionID) {
+		return transactionInterface.getDateOfTransactions(transactionID);
+	}
+	
+	@Path("/Deposit_Withdrawal")
+	@GET
+	@Produces({ "application/json" })
+	public String getDepositWithdrawal(String transactionID) {
+		return transactionInterface.getDepositWithdrawal(transactionID);
+	}
+	
 	@Path("/transactionType")
 	@GET
 	@Produces({ "application/json" })
-	public String getTransactionType() {
-		return transactionInterface.getTransactionType();
+	public String getTransactionType(String transactionID) {
+		return transactionInterface.getTransactionType(transactionID);
 	}
+	
+	@Path("/transactionType")
+	@GET
+	@Produces({ "application/json" })
+	public String getDescription(String transactionID) {
+		return transactionInterface.getDescription(transactionID);
+	}
+	
 	public void setRepository(TransactionDBInterface transactionInterface) {
 		this.transactionInterface = transactionInterface;
 	}
-
 }
