@@ -69,10 +69,30 @@
 			<h1 id="headerTxt"> Average </h1>
 		
 			<div id="averageSection" class="row">
+			
+				<label for="accNumTxt">Account Number:</label>
+    			<input type="text" class="form-control" id="accNumTxt" ng-model ="ctrlAvg.accountNumber"/>
+    			</br>
+			
 				<div id="leftCol" class="col-md-4 col-md-offset-1">
 					<label for="dateFromTxt">From:</label>
-	    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY" ng-model="ctrlAvg.fromDate">
+					<select id="dateFromSelect" class="form-control" ng-model="ctrlAvg.fromDate">
+				      <option></option>
+				      <option value="0">Jan</option>  
+				      <option value="1">Feb</option>  
+				      <option value="2">Mar</option>  
+				      <option value="3">Apr</option>  
+				      <option value="4">May</option>  
+				      <option value="5">Jun</option>  
+				      <option value="6">Jul</option>  
+				      <option value="7">Aug</option>  
+				      <option value="8">Sep</option>  
+				      <option value="9">Oct</option>  
+				      <option value="10">Nov</option>  
+				      <option value="11">Dec</option>  
+				    </select>	    			
 	    			</br>
+	    			
 	    			<div class="results">
 		    			<p> Average Spending </p>
 		    			<span id="avgSpendTxt"> £1500 </span>
@@ -83,7 +103,21 @@
 				
 				<div id="rightCol" class="col-md-4 col-md-offset-1">
 					<label for="dateToTxt">To:</label>
-	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY" ng-model="ctrlAvg.toDate">	    			
+	    			<select id="dateToSelect" class="form-control" ng-model = "ctrlAvg.toDate">
+				      <option></option>
+				      <option value="0">Jan</option>  
+				      <option value="1">Feb</option>  
+				      <option value="2">Mar</option>  
+				      <option value="3">Apr</option>  
+				      <option value="4">May</option>  
+				      <option value="5">Jun</option>  
+				      <option value="6">Jul</option>  
+				      <option value="7">Aug</option>  
+				      <option value="8">Sep</option>  
+				      <option value="9">Oct</option>  
+				      <option value="10">Nov</option>  
+				      <option value="11">Dec</option>  
+				    </select>    		    			 			
 	    			</br>	    				    			
 	    			
 	    			<div class="results">

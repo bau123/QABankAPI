@@ -22,7 +22,8 @@ public class TransactionEndpoint {
 	@Path("/All/{accountNum}/{fromDate}/{toDate}")
 	@GET
 	@Produces({ "application/json" })
-	public String getTransactionAll(@PathParam("accountNum") String accountNum, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
+	public String getTransactionAll(@PathParam("accountNum") String accountNum, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) 
+	{
 		LOGGER.info("getTransactionAll method");
 		LOGGER.info(accountNum);
 		LOGGER.info(fromDate);
