@@ -26,6 +26,7 @@ public class TransactionDBRepository implements TransactionDBInterface{
 	private static final String TRANSACTION_DEPOSIT_WITHDRAWAL_COLUMNS = "SELECT DEPOSIT_WITHDRAWAL FROM TRANSACTIONS WHERE ACCOUNTID = ";
 	private static final String TRANSACTION_DESCRIPTION_COLUMNS = "SELECT DEPOSIT_WITHDRAWAL FROM TRANSACTIONS WHERE ACCOUNTID = ";
 	private static final String TRANSACTION_ALL_COLUMNS = "SELECT * FROM TRANSACTIONS WHERE ACCOUNTID = ";
+	
 	private Query query;
 	
 	@Override
