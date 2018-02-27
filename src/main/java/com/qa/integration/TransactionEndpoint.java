@@ -1,17 +1,20 @@
 package com.qa.integration;
 
 import javax.inject.Inject;
+import javax.persistence.PersistenceContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
 import com.qa.bank.repository.transactionDB.TransactionDBInterface;
 
+@Path("/transaction")
 public class TransactionEndpoint {
 	
 	@Inject
 	private TransactionDBInterface transactionInterface;
-	
+
+
 	@Path("/ID")
 	@GET
 	@Produces({ "application/json" })

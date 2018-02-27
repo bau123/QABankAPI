@@ -9,18 +9,18 @@ import javax.persistence.Id;
 public class Customers {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String CustomerID;
+	private String customerID;
 	
 	private String fName;
 	
 	private String sName;
 
 	public String getCustomerID() {
-		return CustomerID;
+		return customerID;
 	}
 
 	public void setCustomerID(String customerID) {
-		CustomerID = customerID;
+		customerID = customerID;
 	}
 
 	public String getfName() {

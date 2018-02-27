@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 @Entity
 public class Transactions {
 	
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String transactionID;
 	
@@ -30,6 +31,7 @@ public class Transactions {
 	private double updatedBalance;
 	
 	@JoinColumn(name ="AccountID")
+
 	private String accountID;
 	
 	
@@ -48,7 +50,41 @@ public class Transactions {
 			this.amount = amount;
 			this.dateOfTransaction = dateOfTransaction;
 			this.updatedBalance = updatedBalance;
-		
+	}
+
+	
+
+	public String getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		transactionType = transactionType;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		description = description;
+	}
+
+	public Date getDateOfTransaction() {
+		return dateOfTransaction;
+	}
+
+	public void setDateOfTransaction(Date dateOfTransaction) {
+		this.dateOfTransaction = dateOfTransaction;
+	}
+
+	public String getDeposit_Withdrawal() {
+		return deposit_Withdrawal;
+	}
+
+	public void setDeposit_Withdrawal(String deposit_Withdrawal) {
+		this.deposit_Withdrawal = deposit_Withdrawal;
+
 	}
 	
 	
