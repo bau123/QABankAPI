@@ -12,7 +12,8 @@ import javax.persistence.JoinColumn;
 @Entity
 public class Transactions {
 	
-	@Id
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String transactionID;
 	
 	@Column(columnDefinition="Decimal(10,2)")
@@ -22,7 +23,7 @@ public class Transactions {
 	
 	private String description;
 	
-	private String dateOfTransaction;
+	private Date dateOfTransaction;
 	
 	private String deposit_Withdrawal;
 	
@@ -30,7 +31,28 @@ public class Transactions {
 	private double updatedBalance;
 	
 	@JoinColumn(name ="AccountID")
-	private String AccountID;
+
+	private String accountID;
+	
+	
+	public Transactions(){
+		
+	}
+	
+	public Transactions(String accountID, String deposit_Withdrawal,
+						String description, String transactionType, double amount, Date dateOfTransaction, 
+						double udpatedBalance){
+		
+			this.accountID = accountID;
+			this.deposit_Withdrawal = deposit_Withdrawal;
+			this.description = description;
+			this.transactionType = transactionType;
+			this.amount = amount;
+			this.dateOfTransaction = dateOfTransaction;
+			this.updatedBalance = updatedBalance;
+	}
+
+	
 
 	public String getTransactionType() {
 		return transactionType;
@@ -48,11 +70,11 @@ public class Transactions {
 		description = description;
 	}
 
-	public String getDateOfTransaction() {
+	public Date getDateOfTransaction() {
 		return dateOfTransaction;
 	}
 
-	public void setDateOfTransaction(String dateOfTransaction) {
+	public void setDateOfTransaction(Date dateOfTransaction) {
 		this.dateOfTransaction = dateOfTransaction;
 	}
 
@@ -62,6 +84,7 @@ public class Transactions {
 
 	public void setDeposit_Withdrawal(String deposit_Withdrawal) {
 		this.deposit_Withdrawal = deposit_Withdrawal;
+
 	}
 	
 	

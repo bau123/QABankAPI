@@ -39,5 +39,15 @@ public class Customers {
 		this.sName = sName;
 	}
 	
+	public Customers(){
+		
+	}
+	
+	public Customers(String fName, String sName){
+		this.fName = fName;
+		this.sName =sName;
+		
+	}
+	
 
 }
