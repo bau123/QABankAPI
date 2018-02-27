@@ -26,8 +26,9 @@ public class TransactionDBRepository implements TransactionDBInterface{
 	private static final String TRANSACTION_DEPOSIT_WITHDRAWAL_COLUMNS = "SELECT DEPOSIT_WITHDRAWAL FROM TRANSACTIONS WHERE ACCOUNTID = ";
 	private static final String TRANSACTION_DESCRIPTION_COLUMNS = "SELECT DEPOSIT_WITHDRAWAL FROM TRANSACTIONS WHERE ACCOUNTID = ";
 	private static final String TRANSACTION_ALL_COLUMNS = "SELECT e FROM Transactions e WHERE ACCOUNTID = ";
-	private static final String TRANSACTION_GET_AVERAGE_AMOUNT_OF_SPENDING = "SELECT avg(a.Amount) FROM Transactions a WHERE Deposit_Withdrawal='Withdrawal' AND ACCOUNTID = "
-	private static final String TRANSACTION_GET_AVERAGE_AMOUNT_OF_EARNING = "SELECT avg(a.Amount) FROM Transactions a WHERE Deposit_Withdrawal='Deposit'  AND ACCOUNTID = "
+	private static final String TRANSACTION_GET_AVERAGE_AMOUNT_OF_SPENDING = "SELECT avg(a.Amount) FROM Transactions a WHERE Deposit_Withdrawal='Withdrawal' AND ACCOUNTID = ";
+	private static final String TRANSACTION_GET_AVERAGE_AMOUNT_OF_EARNING = "SELECT avg(a.Amount) FROM Transactions a WHERE Deposit_Withdrawal='Deposit'  AND ACCOUNTID = ";
+	
 	private Query query;
 	
 	@Override
@@ -89,12 +90,14 @@ public class TransactionDBRepository implements TransactionDBInterface{
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
 	
+	@Override
 	public String getAverageOfSpending(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_GET_AVERAGE_AMOUNT_OF_SPENDING + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();
 		return jsonUtil.getJSONForObject(transactionCollection);
 	}
 	
+	@Override
 	public String getAverageOfEarning(String accountID) {
 		query = entityManager.createQuery(TRANSACTION_GET_AVERAGE_AMOUNT_OF_EARNING + "'" + accountID + "'");
 		Collection<Transactions> transactionCollection = (Collection<Transactions>) query.getResultList();

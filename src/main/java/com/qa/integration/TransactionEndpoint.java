@@ -36,7 +36,7 @@ public class TransactionEndpoint {
 	@Produces({ "application/json" })
 	public String getAverage(@PathParam("accountNum") String accountID, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
 		LOGGER.info("getAverage method");
-		LOGGER.info(accountNum);
+		LOGGER.info(accountID);
 		LOGGER.info(fromDate);
 		LOGGER.info(toDate);
 		return transactionInterface.getAverageOfSpending(accountID);
