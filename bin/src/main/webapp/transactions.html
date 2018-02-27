@@ -2,7 +2,7 @@
 <html ng-app="mcm">
 <head>
 <meta charset="ISO-8859-1">
-<title>Compare</title>
+<title>Transactions</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
@@ -14,19 +14,12 @@
 	<script src="app.js"></script>
 	
 	
-	<style>
-		#compareSection{
-			margin-top: 5%;
+	<style>		
+		#dateSelection{
 			margin-bottom: 5%;
 		}
 		
-		.results{
-			text-align: center;
-		}
-		
-		#netResultTxt{
-			margin-top: 5%;
-		}
+	
 	</style>
 	
 </head>
@@ -66,68 +59,48 @@
 		
 		
 		<div id="mainContent">
-			<h1 id="headerTxt"> Compare </h1>
+			<h1 id="headerTxt"> Transactions </h1>
 		
-			<div id="compareSection" class="row">
-				<div id="leftCol" class="col-md-4 col-md-offset-1">
-					<div class="dateSelection">
-						<label for="dateFromTxt">From:</label>
-		    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
-		    			</br>
-		    			<label for="dateToTxt">To:</label>
-		    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
-					</div>					
+			<div id="dateSelection" class="row">
+				<div id="dateSelectionCol" class="col-md-4 col-md-offset-1">
+					<label for="dateFromTxt">From:</label>
+	    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
 	    			</br>
-	    			
-	    			<div class="results">
-		    			<p> 
-		    				<span> Total Spending </span> 
-		    				<span id="totalSpendTxt1"> £1500 </span>
-		    			</p>
-	    				<p> 
-		    				<span> Total Income </span>
-		    				<span id="totalIncomeTxt1"> £2000 </span>
-		    			</p>
-		    			<p> 
-		    				<span> Net Money </span> 
-		    				<span id="netMoneyTxt1"> £1500 </span>		   		
-		    			</p>    			
-	    			</div>	    			
+	    			<label for="dateToTxt">To:</label>
+	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
 				</div>
-				
-				<div id="rightCol" class="col-md-4 col-md-offset-1">
-					<div class="dateSelection">
-						<label for="dateFromTxt">From:</label>
-		    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
-		    			</br>
-		    			<label for="dateToTxt">To:</label>
-		    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
-					</div>					
-	    			</br>
-	    			
-	    			<div class="results">
-		    			<p> 
-		    				<span> Total Spending </span> 
-		    				<span id="totalSpendTxt2"> £1500 </span>
-		    			</p>
-	    				<p> 
-		    				<span> Total Income </span>
-		    				<span id="totalIncomeTxt2"> £2000 </span>
-		    			</p>
-		    			<p> 
-		    				<span> Net Money </span> 
-		    				<span id="netMoneyTxt2"> £1500 </span>		   		
-		    			</p>    	   		    			
-	    			</div>	    	
-	    			
-	    			<div id="netResultTxt">
-						<p> You saved £1000 </p>
-					</div>
-				</div>
-
 			</div>
 			
-
+			
+			<div id="transactionTbl" class="row" ng-controller="TransactionController as ctrlTrans">
+				<div class="col-md-10 col-md-offset-1">
+				
+					<table class="table table-striped" ng-init="ctrlTrans.storeTransactions()">
+						<thead>
+							<tr> 
+								<th> Date </th>
+								<th> Reference </th>
+								<th> In </th>
+								<th> Out </th>
+								<th> Balance </th>
+								<th> Type </th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr ng-repeat="transaction in ctrlTrans.allTransactions()">
+								<td ng-bind="transaction.date">  </td> 
+								<td ng-bind="transaction.reference">  </td> 
+								<td ng-bind="transaction._in">  </td> 
+								<td ng-bind="transaction.out">  </td> 
+								<td ng-bind="transaction.balance">  </td> 
+								<td ng-bind="transaction.type">  </td> 
+							</tr>
+						</tbody>
+					</table>
+				
+				</div>			
+			</div>
 		
 		
 		</div>

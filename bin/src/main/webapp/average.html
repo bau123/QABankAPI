@@ -2,7 +2,7 @@
 <html ng-app="mcm">
 <head>
 <meta charset="ISO-8859-1">
-<title>Compare</title>
+<title>Average</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
@@ -15,12 +15,12 @@
 	
 	
 	<style>
-		#compareSection{
+		#averageSection{
 			margin-top: 5%;
 			margin-bottom: 5%;
 		}
 		
-		.results{
+		.netResultTxt{
 			text-align: center;
 		}
 		
@@ -66,62 +66,35 @@
 		
 		
 		<div id="mainContent">
-			<h1 id="headerTxt"> Compare </h1>
+			<h1 id="headerTxt"> Average </h1>
 		
-			<div id="compareSection" class="row">
+			<div id="averageSection" class="row">
 				<div id="leftCol" class="col-md-4 col-md-offset-1">
-					<div class="dateSelection">
-						<label for="dateFromTxt">From:</label>
-		    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
-		    			</br>
-		    			<label for="dateToTxt">To:</label>
-		    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
-					</div>					
+					<label for="dateFromTxt">From:</label>
+	    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
 	    			</br>
-	    			
 	    			<div class="results">
-		    			<p> 
-		    				<span> Total Spending </span> 
-		    				<span id="totalSpendTxt1"> £1500 </span>
-		    			</p>
-	    				<p> 
-		    				<span> Total Income </span>
-		    				<span id="totalIncomeTxt1"> £2000 </span>
-		    			</p>
-		    			<p> 
-		    				<span> Net Money </span> 
-		    				<span id="netMoneyTxt1"> £1500 </span>		   		
-		    			</p>    			
+		    			<p> Average Spending </p>
+		    			<span id="avgSpendTxt"> £1500 </span>
+		    			</br>
+		    			<button type="button" id="spendFullListBtn" class="btn btn-primary"> See Full List </button>
 	    			</div>	    			
 				</div>
 				
 				<div id="rightCol" class="col-md-4 col-md-offset-1">
-					<div class="dateSelection">
-						<label for="dateFromTxt">From:</label>
-		    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
-		    			</br>
-		    			<label for="dateToTxt">To:</label>
-		    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
-					</div>					
+					<label for="dateToTxt">To:</label>
+	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
 	    			</br>
-	    			
 	    			<div class="results">
-		    			<p> 
-		    				<span> Total Spending </span> 
-		    				<span id="totalSpendTxt2"> £1500 </span>
-		    			</p>
-	    				<p> 
-		    				<span> Total Income </span>
-		    				<span id="totalIncomeTxt2"> £2000 </span>
-		    			</p>
-		    			<p> 
-		    				<span> Net Money </span> 
-		    				<span id="netMoneyTxt2"> £1500 </span>		   		
-		    			</p>    	   		    			
-	    			</div>	    	
+		    			<p> Average Income </p>
+		    			<span id="avgIncomeTxt"> £2500 </span>
+		    			</br>
+		    			<button type="button" id="incomeFullListBtn" class="btn btn-primary"> See Full List </button>
+	    			</div>
 	    			
 	    			<div id="netResultTxt">
-						<p> You saved £1000 </p>
+						<p> Net Money </p>
+						<span id="netMoneyTxt"> £1000 </span>
 					</div>
 				</div>
 
