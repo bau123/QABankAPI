@@ -11,7 +11,7 @@ public class Account {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long customerID;
+	private String customerID;
 	private String accountNumber;
 	private Float balance;
 	private String accountID;
@@ -34,7 +34,7 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
-	public float getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 
@@ -50,11 +50,11 @@ public class Account {
 		this.accountID = accountID;
 	}
 
-	public Long getCustomerID() {
+	public String getCustomerID() {
 		return customerID;
 	}
 
-	public void setCustomerID(Long customerID) {
+	public void setCustomerID(String customerID) {
 		this.customerID = customerID;
 	}
 }
