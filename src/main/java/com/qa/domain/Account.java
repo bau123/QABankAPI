@@ -37,7 +37,7 @@ public class Account {
 	}
 
 	public Account(String accountNumber, Float balance, String accountID) {
-		this.accountNumber = accountID;
+		this.accountNo = accountNumber;
 		this.balance = balance;
 		this.accountID = accountID;
 	}
@@ -67,7 +67,7 @@ public class Account {
 	}
 
 	public String getCustomerID() {
-		return CustomerId;
+		return customerId;
 	}
 
 	public void setCustomerID(String customerID) {

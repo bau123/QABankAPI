@@ -5,7 +5,7 @@ public interface AccountDBInterface {
 	
 	public String getAccountNo(String accountNo);
 	
-	public float getBalance();
+	public String getBalance();
 	
 	public String getCustomerID(String customerID);
 }
