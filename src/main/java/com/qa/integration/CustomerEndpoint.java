@@ -7,6 +7,7 @@ import javax.ws.rs.Produces;
 
 import com.qa.bank.repository.customerDB.CustomerDBInterface;
 
+@Path("/customer")
 public class CustomerEndpoint{
 	
 	@Inject
