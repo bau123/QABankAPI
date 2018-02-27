@@ -16,11 +16,11 @@ public class AccountEndpoint {
 	@Inject
 	private AccountDBInterface accountInterface;
 	
-	@Path("/ID")
+	@Path("/All")
 	@GET
 	@Produces({ "application/json" })
-	public String getAccountID() {
-		return accountInterface.getAccountID();
+	public String getAccountAll(String accountID) {
+		return accountInterface.getAccountAll(accountID);
 	}
 	
 	@Path("/AccountNo")
@@ -33,17 +33,13 @@ public class AccountEndpoint {
 	@Path("/Balance")
 	@GET
 	@Produces({ "application/json" })
-	public float getBalance() {
-		return accountInterface.getBalance();
+	public String getBalance(String accountID) {
+		return accountInterface.getBalance(accountID);
 
 	}
-	@Path("/CustomerID")
-	@GET
-	@Produces({ "application/json" })
-	public String getCustomerID(String customerID) {
-		return accountInterface.getCustomerID(customerID);
-	}
+
 	public void setRepository(AccountDBInterface accountInterface) {
 		this.accountInterface = accountInterface;
 	}
+	
 }
