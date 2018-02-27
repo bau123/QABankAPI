@@ -1,11 +1,9 @@
 package com.qa.bank.repository.customerDB;
 
 public interface CustomerDBInterface {
-	public String getCustomerID(String ID);
+	public String getFirstName(String customerID);
 	
-	public String getFirstName();
+	public String getLastName(String customerID);
 	
-	public String getLastName();
-	
-	public String getAddress();
+	public String getCustomerAll(String customerID);
 }
