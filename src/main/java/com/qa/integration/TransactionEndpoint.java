@@ -34,12 +34,12 @@ public class TransactionEndpoint {
 	@Path("/average/{accountNum}/{fromDate}/{toDate}")
 	@GET
 	@Produces({ "application/json" })
-	public String getAverage(@PathParam("accountNum") String accountNum, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
+	public String getAverage(@PathParam("accountNum") String accountID, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
 		LOGGER.info("getAverage method");
 		LOGGER.info(accountNum);
 		LOGGER.info(fromDate);
 		LOGGER.info(toDate);
-		return transactionInterface.getTransactionsAll(accountNum);
+		return transactionInterface.getAverageOfSpending(accountID);
 	}
 
 	
@@ -85,6 +85,8 @@ public class TransactionEndpoint {
 	public String getDescription(String transactionID) {
 		return transactionInterface.getDescription(transactionID);
 	}
+	
+	
 
 	
 	public void setRepository(TransactionDBInterface transactionInterface) {
