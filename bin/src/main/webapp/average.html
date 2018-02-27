@@ -65,13 +65,13 @@
 		</header>		
 		
 		
-		<div id="mainContent">
+		<div id="mainContent" ng-controller="AverageController as ctrlAvg">
 			<h1 id="headerTxt"> Average </h1>
 		
 			<div id="averageSection" class="row">
 				<div id="leftCol" class="col-md-4 col-md-offset-1">
 					<label for="dateFromTxt">From:</label>
-	    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY">
+	    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY" ng-model="ctrlAvg.fromDate">
 	    			</br>
 	    			<div class="results">
 		    			<p> Average Spending </p>
@@ -83,8 +83,9 @@
 				
 				<div id="rightCol" class="col-md-4 col-md-offset-1">
 					<label for="dateToTxt">To:</label>
-	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY">
-	    			</br>
+	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY" ng-model="ctrlAvg.toDate">	    			
+	    			</br>	    				    			
+	    			
 	    			<div class="results">
 		    			<p> Average Income </p>
 		    			<span id="avgIncomeTxt"> £2500 </span>
@@ -95,7 +96,11 @@
 	    			<div id="netResultTxt">
 						<p> Net Money </p>
 						<span id="netMoneyTxt"> £1000 </span>
-					</div>
+					</div>										
+				</div>
+				
+				<div id="lastCol" class="col-md-1"> 
+					<button type="button" id="goBtn" class="btn btn-primary" ng-click="ctrlAvg.getAverageInfo()">Go</button>
 				</div>
 
 			</div>
