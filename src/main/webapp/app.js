@@ -2,41 +2,27 @@ var app=angular.module('mcm', []); //'app-directives'
 
 app.controller("TransactionController", function($log, $http)
 {
+	this.accountNumber;
 	this.allTransactions = [];
-	this.toDate = "jan";
-	this.fromDate = "march";
+	this.toDate = "march";
+	this.fromDate = "jan";
 	
 	this.getTransactionsFromServer = function()
-	{
-		$log.log("from: " + this.fromDate);
-		$log.log("to: " + this.toDate);
-		$log.log("getTransactionsFromServer method");	    
+	{  
 	    var _this = this;
-		$http.get('/london.api/rest/transaction/transactions/' + this.fromDate + "/" + this.toDate).then(function(response){
-			$log.log(response.data);
+		$http.get('/london.api/rest/transaction/All/' + this.accountNumber + '/' + this.fromDate + "/" + this.toDate).then(function(response){
+			$log.log(response.data);			
 			_this.allTransactions = response.data;
+			
+			
+			for(var x = 0; x < _this.allTransactions.length; x++){
+				_this.allTransactions[x].dateOfTransaction = _this.allTransactions[x].dateOfTransaction.substr(0,12);
+			}
 		});	
 	
 	}
 	
-	this.storeTransactions = function()
-	{
-		$log.log("storeTransactions method");
-		 
-		var transaction = {
-			date: "test",
-			reference: "test",
-			_in: "test",
-			out: "test",
-			balance: "test",
-			type: "test"
-		}
-		
-		
-		
-		this.allTransactions.push(transaction);		
-		$log.log(this.allTransactions);
-	}
+
 	
 });
 
@@ -44,6 +30,7 @@ app.controller("TransactionController", function($log, $http)
 
 app.controller("AverageController", function($log, $http)
 {
+	this.accountNumber;
 	this.fromDate;
 	this.toDate;
 	this.avgSpending;
@@ -55,7 +42,7 @@ app.controller("AverageController", function($log, $http)
 		$log.log("to: " + this.toDate);
 		$log.log("getAverageInfo method");	    
 	    var _this = this;
-		$http.get('/london.api/rest/class/method/' + this.fromDate + "/" + this.toDate).then(function(response){
+		$http.get('/london.api/rest/transaction/average/' + this.accountNumber + '/' + this.fromDate + "/" + this.toDate).then(function(response){
 			$log.log(response.data);
 			_this.fromDate = response.data.fromDate;
 			_this.toDate = response.data.toDate;

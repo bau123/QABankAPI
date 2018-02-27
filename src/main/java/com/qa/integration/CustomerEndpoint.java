@@ -13,33 +13,28 @@ public class CustomerEndpoint{
 	@Inject
 	private CustomerDBInterface customerInterface;
 	
-	@Path("/ID")
+	@Path("/All")
 	@GET
 	@Produces({ "application/json" })
-	public String getCustomerID(String ID) {
-		return customerInterface.getCustomerID(ID);
+	public String getCustomerAll(String customerID) {
+		return customerInterface.getCustomerAll(customerID);
 	}
 
 	@Path("/firstName")
 	@GET
 	@Produces({ "application/json" })
-	public String getFirstName() {
-		return customerInterface.getFirstName();
+	public String getFirstName(String customerID) {
+		return customerInterface.getFirstName(customerID);
 	}
 
 	@Path("/lastName")
 	@GET
 	@Produces({ "application/json" })
-	public String getLastName() {
-		return customerInterface.getLastName();
+	public String getLastName(String customerID) {
+		return customerInterface.getLastName(customerID);
 
 	}
-	@Path("/Address")
-	@GET
-	@Produces({ "application/json" })
-	public String getAddress() {
-		return customerInterface.getAddress();
-	}
+
 	public void setRepository(CustomerDBInterface customerInterface) {
 		this.customerInterface = customerInterface;
 	}

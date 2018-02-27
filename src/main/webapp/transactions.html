@@ -68,6 +68,10 @@
 	    			</br>
 	    			<label for="dateToTxt">To:</label>
 	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY" ng-model ="ctrlTrans.toDate"/>
+	    			</br>
+	    			<label for="accNumTxt">Account Number:</label>
+	    			<input type="text" class="form-control" id="accNumTxt" ng-model ="ctrlTrans.accountNumber"/>
+	    			</br>
 	    			<button type="button" id="viewTransBtn" class="btn btn-primary" ng-click="ctrlTrans.getTransactionsFromServer()">View</button>
 				</div>
 			</div>
@@ -81,8 +85,7 @@
 							<tr> 
 								<th> Date </th>
 								<th> Reference </th>
-								<th> In </th>
-								<th> Out </th>
+								<th> In / Out </th>
 								<th> Balance </th>
 								<th> Type </th>
 							</tr>
@@ -90,12 +93,11 @@
 						
 						<tbody>
 							<tr ng-repeat="transaction in ctrlTrans.allTransactions">
-								<td ng-bind="transaction.date">  </td> 
-								<td ng-bind="transaction.reference">  </td> 
-								<td ng-bind="transaction._in">  </td> 
-								<td ng-bind="transaction.out">  </td> 
-								<td ng-bind="transaction.balance">  </td> 
-								<td ng-bind="transaction.type">  </td> 
+								<td ng-bind="transaction.dateOfTransaction">  </td> 
+								<td ng-bind="transaction.description">  </td> 
+								<td ng-bind="transaction.deposit_Withdrawal">  </td> 
+								<td ng-bind="transaction.updatedBalance">  </td> 
+								<td ng-bind="transaction.transactionType">  </td> 
 							</tr>
 						</tbody>
 					</table>
