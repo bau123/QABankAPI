@@ -1,3 +1,4 @@
+
 package com.qa.integration;
 
 import javax.inject.Inject;
@@ -22,7 +23,8 @@ public class TransactionEndpoint {
 	@Path("/All/{accountNum}/{fromDate}/{toDate}")
 	@GET
 	@Produces({ "application/json" })
-	public String getTransactionAll(@PathParam("accountNum") String accountNum, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
+	public String getTransactionAll(@PathParam("accountNum") String accountNum, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) 
+	{
 		LOGGER.info("getTransactionAll method");
 		LOGGER.info(accountNum);
 		LOGGER.info(fromDate);
@@ -34,12 +36,12 @@ public class TransactionEndpoint {
 	@Path("/average/{accountNum}/{fromDate}/{toDate}")
 	@GET
 	@Produces({ "application/json" })
-	public String getAverage(@PathParam("accountNum") String accountID, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
+	public String getAverage(@PathParam("accountNum") String accountNum, @PathParam("fromDate") String fromDate, @PathParam("toDate") String toDate) {
 		LOGGER.info("getAverage method");
-		LOGGER.info(accountID);
+		LOGGER.info(accountNum);
 		LOGGER.info(fromDate);
 		LOGGER.info(toDate);
-		return transactionInterface.getAverageOfSpending(accountID);
+		return transactionInterface.getTransactionsAll(accountNum);
 	}
 
 	
@@ -85,8 +87,6 @@ public class TransactionEndpoint {
 	public String getDescription(String transactionID) {
 		return transactionInterface.getDescription(transactionID);
 	}
-	
-	
 
 	
 	public void setRepository(TransactionDBInterface transactionInterface) {

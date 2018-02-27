@@ -63,11 +63,41 @@
 		
 			<div id="dateSelection" class="row">
 				<div id="dateSelectionCol" class="col-md-4 col-md-offset-1">
-					<label for="dateFromTxt">From:</label>
-	    			<input type="text" class="form-control" id="dateFromTxt" placeholder="DD/MM//YY" ng-model ="ctrlTrans.fromDate"/>
+					<label for="dateFromSelect">From:</label>	    			
+	    			<select id="dateFromSelect" class="form-control" ng-model = "ctrlTrans.fromDate">
+				      <option></option>
+				      <option value="0">Jan</option>  
+				      <option value="1">Feb</option>  
+				      <option value="2">Mar</option>  
+				      <option value="3">Apr</option>  
+				      <option value="4">May</option>  
+				      <option value="5">Jun</option>  
+				      <option value="6">Jul</option>  
+				      <option value="7">Aug</option>  
+				      <option value="8">Sep</option>  
+				      <option value="9">Oct</option>  
+				      <option value="10">Nov</option>  
+				      <option value="11">Dec</option>  
+				    </select>
 	    			</br>
-	    			<label for="dateToTxt">To:</label>
-	    			<input type="text" class="form-control" id="dateToTxt" placeholder="DD/MM//YY" ng-model ="ctrlTrans.toDate"/>
+	    			
+	    			<label for="dateToSelect">To:</label>
+	    			<select id="dateToSelect" class="form-control" ng-model = "ctrlTrans.toDate">
+				      <option></option>
+				      <option value="0">Jan</option>  
+				      <option value="1">Feb</option>  
+				      <option value="2">Mar</option>  
+				      <option value="3">Apr</option>  
+				      <option value="4">May</option>  
+				      <option value="5">Jun</option>  
+				      <option value="6">Jul</option>  
+				      <option value="7">Aug</option>  
+				      <option value="8">Sep</option>  
+				      <option value="9">Oct</option>  
+				      <option value="10">Nov</option>  
+				      <option value="11">Dec</option>  
+				    </select>    			
+	    			
 	    			</br>
 	    			<label for="accNumTxt">Account Number:</label>
 	    			<input type="text" class="form-control" id="accNumTxt" ng-model ="ctrlTrans.accountNumber"/>
